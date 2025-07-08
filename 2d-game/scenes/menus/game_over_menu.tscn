@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://p5bwsona6rx6"]
+
+[ext_resource type="FontFile" uid="uid://b2nlwtlihbadp" path="res://fonts/Xolonium-Regular.ttf" id="1_14ib6"]
+
+[node name="GameOverMenu" type="GameOverMenu"]
+
+[node name="GameOverHeading" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -104.0
+offset_right = 151.5
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99999994, 0.89639384, 0.6011536, 1)
+theme_override_colors/font_shadow_color = Color(0.07450981, 0.03137255, 0, 1)
+theme_override_fonts/font = ExtResource("1_14ib6")
+theme_override_font_sizes/font_size = 42
+text = "You died!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayAgain" type="CustomButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -10.0
+offset_right = 48.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6004771, 0.8839502, 0.94980055, 1)
+theme_override_fonts/font = ExtResource("1_14ib6")
+text = "Play again"
+
+[node name="ExitToMainMenu" type="CustomButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = 30.0
+offset_right = 81.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6004771, 0.8839502, 0.94980055, 1)
+theme_override_fonts/font = ExtResource("1_14ib6")
+text = "Exit to Main Menu"
+
+[node name="ExitGame" type="CustomButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 71.0
+offset_right = 70.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6004771, 0.8839502, 0.94980055, 1)
+theme_override_fonts/font = ExtResource("1_14ib6")
+text = "Exit the Game"

@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfq1ve668ico2"]
+
+[ext_resource type="Texture2D" uid="uid://bs16ak8qlnvpw" path="res://art/playerGrey_up1.png" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bwqf6s410yp3d" path="res://art/playerGrey_up2.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://dm635ohkjiwgh" path="res://art/bubble-water.png" id="3_i3pqv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3pqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_onrkg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3pqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_onrkg")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_sweqy"]
+_data = [Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2hs0m"]
+curve = SubResource("Curve_sweqy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2hs0m"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 16, 1)
+direction = Vector3(-1, 0, 0)
+spread = 90.0
+initial_velocity_min = 70.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 0, 0)
+damping_min = 0.1
+damping_max = 0.3
+scale_min = 0.0
+scale_max = 0.14999999
+scale_curve = SubResource("CurveTexture_2hs0m")
+
+[node name="Player" type="Player"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_i3pqv")
+animation = &"idle"
+speed_scale = 0.85
+
+[node name="BubbleTrail" type="GPUParticles2D" parent="."]
+position = Vector2(-28, 0)
+amount = 26
+amount_ratio = 0.5
+texture = ExtResource("3_i3pqv")
+lifetime = 0.35000000000000003
+explosiveness = 0.35
+process_material = SubResource("ParticleProcessMaterial_2hs0m")
